@@ -84,16 +84,24 @@ export default function Navigation() {
           <LuUser className="text-white" />{" "}
         </div>
 
-        <div className="max-sm:block max-md:hidden max-lg:hidden max-xl:hidden max-2xl:hidden ">
+        <div className="max-sm:block max-md:hidden max-lg:hidden max-xl:hidden max-2xl:hidden  flex">
           {open ? (
-            <MdClose className="text-3xl" onClick={handleMenu} />
+            <MdClose
+              className={`text-3xl ${
+                theme === "light" ? "text-black" : "text-white"
+              }`}
+              onClick={handleMenu}
+            />
           ) : (
-            <IoMdMenu className="text-3xl" onClick={handleMenu} />
+            <IoMdMenu
+              className={`text-3xl ${
+                theme === "light" ? "text-black" : "text-white"
+              }`}
+              onClick={handleMenu}
+            />
           )}
 
-          {
-            open&&(<Menu/>)
-          }
+          {open && <Menu />}
         </div>
       </div>
     </div>

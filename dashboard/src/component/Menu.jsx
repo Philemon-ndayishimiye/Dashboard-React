@@ -10,12 +10,18 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { FiLogOut } from "react-icons/fi";
 import MenuComponent from "./MenuComponent";
+import { LuMoon } from "react-icons/lu";
+import { FiSun } from "react-icons/fi";
 
 export default function Menu() {
-  const { theme } = useTheme();
+  const { theme, HandleTheme } = useTheme();
   const { user } = useUser();
   return (
-    <div className="absolute top-[80px] left-0 w-full bg-primarycolor-200 z-50 py-3 px-2">
+    <div
+      className={`absolute top-[80px] left-0 w-full z-50 py-3 px-2 ${
+        theme === "light" ? " bg-primarycolor-200" : "bg-gray-900"
+      }`}
+    >
       <div className="flex gap-4 ">
         <div className=" cursor-pointer bg-primarycolor-500 flex justify-center items-center w-[40px] h-[40px] rounded-md  ">
           {" "}
@@ -100,6 +106,24 @@ export default function Menu() {
           category={"Logout"}
           variant="primary"
         />
+
+        <div>
+          {theme === "light" ? (
+            <LuMoon
+              className={` pt-[20px] text-[40px] ${
+                theme === "light" ? "text-gray-600" : "text-white"
+              }`}
+              onClick={HandleTheme}
+            />
+          ) : (
+            <FiSun
+              className={` text-[40px] pt-[20px]  ${
+                theme === "light" ? "text-gray-600" : "text-white"
+              }`}
+              onClick={HandleTheme}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
