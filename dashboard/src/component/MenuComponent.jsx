@@ -12,14 +12,17 @@ export default function MenuComponent({
   number,
   variant = "defolt",
   onClick,
+  className = "",
 }) {
   const { theme } = useTheme();
   return (
-    <div className="flex justify-between hover:bg-primarycolor-50  hover:text-primarycolor-500 my-4 cursor-pointer rounded-lg py-2 px-2 ">
-      <div className="flex gap-5">
+    <div
+      className={`flex justify-between hover:bg-primarycolor-50  hover:text-primarycolor-500 my-4 cursor-pointer rounded-lg py-2 ${className}`}
+    >
+      <div className="flex gap-5 max-md:2">
         <div className="flex justify-center items-center">
           <h1
-            className={` text-xl ${
+            className={` text-xl max-md:text-[12px] ${
               theme === "light" ? "text-gray-400 " : "text-gray-600"
             }`}
             onClick={onClick}
@@ -28,7 +31,7 @@ export default function MenuComponent({
           </h1>
         </div>
         <h1
-          className={`text-[13px] font-semibold ${
+          className={`text-[13px] font-semibold max-md:text-[10px] ${
             theme === "light" ? "text-gray-700" : "text-gray-400"
           }`}
         >

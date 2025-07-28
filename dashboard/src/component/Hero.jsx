@@ -10,17 +10,20 @@ export default function Hero() {
         <BsBoxSeam className="text-white font-bold text-2xl" />{" "}
       </div>
       <div>
-        <h1 className="font-bold text-2xl text-white pb-2 max-sm:text-sm">
+        <h1
+          className="font-bold text-2xl text-white pb-2 max-sm:text-sm 
+        max-md:text-[20px]"
+        >
           iHUZA INVENTORY - System Overview
         </h1>
-        <p className="text-white pb-2 max-sm:text-[11px]">
+        <p className="text-white pb-2 max-sm:text-[11px] max-md:text-[14px]">
           Monitor your iHUZA inventory and product assignments in real-time.
         </p>
         <div className="flex gap-2">
           <div className="flex justify-center items-center">
             <SiTicktick className="text-green-400 text-xl" />
           </div>
-          <p className="text-white max-sm:text-[13px]">
+          <p className="text-white max-sm:text-[13px] max-md:text-[13px]">
             All Systems Operational{" "}
           </p>
         </div>

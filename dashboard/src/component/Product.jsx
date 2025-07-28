@@ -35,7 +35,7 @@ export default function ({ name, category, date, status, variant = "defolt" }) {
 
       <div>
         <p
-          className={`px-2 text-sm text-gray-500 rounded-full ${
+          className={`px-2 text-sm text-gray-500 rounded-full max-md:text-[9px] ${
             theme === "light"
               ? `${classVariant[variant]} `
               : `${darkVariant[variant]}`

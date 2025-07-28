@@ -18,10 +18,10 @@ export default function Rowdata({
     <div
       className={` ${
         theme === "light" ? "bg-white" : "bg-gray-800"
-      } border-b border-gray-200 flex items-center gap-[80px] `}
+      } border-b border-gray-200 flex items-center gap-[65px] `}
     >
-      <div className="w-[220px] px-7 py-4 flex gap-4 items-center">
-        <div className=" bg-gray-200 w-[35px] h-[35px] flex justify-center items-center px-2 rounded-full">
+      <div className="w-[220px] px-7 py-4 flex gap-4 items-center max-md:w-[170px] max-md:px-2">
+        <div className=" bg-gray-200 w-[35px] h-[35px] flex justify-center items-center px-2 rounded-full ">
           <LuUser />
         </div>
         <div>
@@ -38,19 +38,19 @@ export default function Rowdata({
         </div>
       </div>
       <div className="flex gap-[72px]">
-        <div className="text-left w-[80px] max-sm:hidden">
+        <div className="text-left w-[80px] max-sm:hidden max-md:hidden">
           <Role label={role} variant={Rolevariant} />
         </div>
 
-        <div className=" flex justify-center w-[60px] max-sm:hidden">
+        <div className=" flex justify-center w-[60px] max-sm:hidden ">
           <Status label={status} variant={statusVariant} />
         </div>
 
-        <div className="w-[90px] max-sm:hidden">
+        <div className="w-[90px] max-sm:hidden max-md:hidden">
           <p className="text-sm text-gray-400">2 hours ago</p>
         </div>
 
-        <div className="flex gap-4 mx-3 max-sm:flex-col max-sm:gap-0">
+        <div className="flex gap-4 mx-3 max-sm:flex-col max-sm:gap-0 max-md:gap-2 ">
           <Button label={"Edit"} variant={"edit"} />
           <Button label={"Delete"} variant={"delete"} />
         </div>

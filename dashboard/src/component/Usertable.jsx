@@ -110,19 +110,19 @@ export default function Usertable() {
       <div>
         <table className="w-full">
           <thead
-            className={`${theme === "light" ? "bg-gray-50" : "bg-gray-700"}`}
+            className={` ${theme === "light" ? "bg-gray-50" : "bg-gray-700"}`}
           >
             <tr className="flex px-6 ">
-              <th className="  px-3 text-[12px] text-gray-400 uppercase py-4">
+              <th className="  px-3 text-[12px] text-gray-400 uppercase py-4 max-md:px-1">
                 User
               </th>
-              <th className="  pl-[210px] text-[12px] text-gray-400 uppercase py-4 max-sm:hidden">
+              <th className="  pl-[210px] text-[12px] text-gray-400 uppercase py-4 max-sm:hidden max-md:hidden ">
                 Role
               </th>
-              <th className="pl-[110px] text-[12px] text-gray-400 uppercase py-4 max-sm:hidden">
+              <th className="pl-[110px] text-[12px] text-gray-400 uppercase py-4 max-sm:hidden max-md:pl-[200px]">
                 Status
               </th>
-              <th className=" pl-[95px] text-[12px] text-gray-400 uppercase py-4 max-sm:hidden">
+              <th className=" pl-[95px] text-[12px] text-gray-400 uppercase py-4 max-sm:hidden max-md:hidden">
                 Last Login
               </th>
               <th className="pl-[80px] text-[12px] text-gray-400 uppercase py-4 max-sm:flex-col max-sm:pl-[180px]">

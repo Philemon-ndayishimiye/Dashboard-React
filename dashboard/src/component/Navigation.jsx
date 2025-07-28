@@ -22,7 +22,7 @@ export default function Navigation() {
 
   return (
     <div
-      className={`w-full flex justify-between shadow-sm  py-3  px-12  ${
+      className={`w-full flex justify-between shadow-sm  py-3  px-12 max-md:px-5 ${
         theme === "light"
           ? "bg-white border border-primarycolor-50 "
           : "bg-gray-800 border border-gray-700"
@@ -30,7 +30,7 @@ export default function Navigation() {
     >
       <div>
         <h1
-          className={`text-3xl font-bold ${
+          className={`text-3xl font-bold max-md:text-[18px] ${
             theme === "light" ? "text-black" : "text-white"
           } max-sm:text-2xl `}
         >
@@ -46,7 +46,7 @@ export default function Navigation() {
       </div>
 
       <div className="flex gap-6 justify-center items-center">
-        <div className="max-sm:hidden">
+        <div className="max-sm:hidden max-md:hidden">
           {" "}
           {theme === "light" ? (
             <LuMoon
@@ -60,11 +60,11 @@ export default function Navigation() {
             />
           )}
         </div>
-        <div className="max-sm:hidden">
+        <div className="max-sm:hidden max-md:hidden">
           {" "}
           <IoSettingsOutline className=" text-gray-400 text-xl cursor-pointer" />{" "}
         </div>
-        <div className="relative max-sm:hidden">
+        <div className="relative max-sm:hidden  max-md:hidden">
           {" "}
           <IoIosNotificationsOutline className=" text-gray-400 text-xl cursor-pointer" />{" "}
           <div className="w-3  h-3 bg-red-500 absolute top-[-10px] rounded-full left-4"></div>
@@ -74,7 +74,7 @@ export default function Navigation() {
           <h1
             className={`${
               theme === "light" ? "text-black" : "text-gray-400"
-            } max-sm:text-[10px]`}
+            } max-sm:text-[10px] max-md:hidden`}
           >
             {user.email}
           </h1>{" "}
@@ -87,14 +87,14 @@ export default function Navigation() {
         <div className="max-sm:block max-md:hidden max-lg:hidden max-xl:hidden max-2xl:hidden  flex">
           {open ? (
             <MdClose
-              className={`text-3xl ${
+              className={`text-3xl cursor-pointer ${
                 theme === "light" ? "text-black" : "text-white"
               }`}
               onClick={handleMenu}
             />
           ) : (
             <IoMdMenu
-              className={`text-3xl ${
+              className={`text-3xl cursor-pointer ${
                 theme === "light" ? "text-black" : "text-white"
               }`}
               onClick={handleMenu}

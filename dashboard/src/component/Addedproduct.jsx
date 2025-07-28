@@ -30,7 +30,9 @@ export default function Addedproduct() {
         </h1>
       </div>
 
-      <div className={`py-6 px-6 grid grid-cols-3 gap-3 max-sm:grid-cols-1`}>
+      <div
+        className={`py-6 px-6 grid grid-cols-3 gap-3 max-sm:grid-cols-1 max-md:grid-cols-2`}
+      >
         {product.map((prod) => (
           <Product
             name={prod.name}

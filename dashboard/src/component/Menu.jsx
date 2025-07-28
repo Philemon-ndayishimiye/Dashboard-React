@@ -110,14 +110,14 @@ export default function Menu() {
         <div>
           {theme === "light" ? (
             <LuMoon
-              className={` pt-[20px] text-[40px] ${
+              className={` cursor-pointer pt-[20px] text-[40px] ${
                 theme === "light" ? "text-gray-600" : "text-white"
               }`}
               onClick={HandleTheme}
             />
           ) : (
             <FiSun
-              className={` text-[40px] pt-[20px]  ${
+              className={` cursor-pointer text-[40px] pt-[20px]  ${
                 theme === "light" ? "text-gray-600" : "text-white"
               }`}
               onClick={HandleTheme}

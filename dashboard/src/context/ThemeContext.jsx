@@ -7,6 +7,7 @@ export const ThemeProvider = ({ children }) => {
 
   const HandleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    localStorage.setItem("theme", JSON.stringify(theme));
   };
 
   return (
