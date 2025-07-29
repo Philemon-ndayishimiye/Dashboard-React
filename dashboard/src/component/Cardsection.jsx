@@ -7,7 +7,7 @@ import Card from "./Card";
 
 export default function Cardsection() {
   return (
-    <div className=" flex justify-between gap-4  mb-[30px] max-sm:flex-col max-md:grid max-md:grid-cols-2 ">
+    <div className=" flex justify-between gap-4  mb-[30px] max-sm:grid-cols-1 max-md:grid max-md:grid-cols-2 max-lg:grid max-lg:grid-cols-2 max-xl:grid max-xl:grid-cols-3">
       <Card icon={<FiUsers />} quantity={"116"} description={"Total Users"} />
 
       <Card

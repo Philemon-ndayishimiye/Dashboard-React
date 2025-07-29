@@ -26,7 +26,7 @@ export default function Navigation() {
         theme === "light"
           ? "bg-white border border-primarycolor-50 "
           : "bg-gray-800 border border-gray-700"
-      } max-sm:px-2`}
+      } max-sm:px-2 `}
     >
       <div>
         <h1
@@ -46,7 +46,7 @@ export default function Navigation() {
       </div>
 
       <div className="flex gap-6 justify-center items-center">
-        <div className="max-sm:hidden max-md:hidden">
+        <div className="max-sm:hidden max-md:hidden max-lg:hidden">
           {" "}
           {theme === "light" ? (
             <LuMoon
@@ -60,16 +60,16 @@ export default function Navigation() {
             />
           )}
         </div>
-        <div className="max-sm:hidden max-md:hidden">
+        <div className="max-sm:hidden max-md:hidden max-lg:hidden">
           {" "}
           <IoSettingsOutline className=" text-gray-400 text-xl cursor-pointer" />{" "}
         </div>
-        <div className="relative max-sm:hidden  max-md:hidden">
+        <div className="relative max-sm:hidden  max-md:hidden max-lg:hidden">
           {" "}
           <IoIosNotificationsOutline className=" text-gray-400 text-xl cursor-pointer" />{" "}
           <div className="w-3  h-3 bg-red-500 absolute top-[-10px] rounded-full left-4"></div>
         </div>
-        <div className="max-sm:hidden">
+        <div className="max-sm:hidden ">
           {" "}
           <h1
             className={`${

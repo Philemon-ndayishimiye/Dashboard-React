@@ -38,7 +38,7 @@ export default function Rowdata({
         </div>
       </div>
       <div className="flex gap-[72px]">
-        <div className="text-left w-[80px] max-sm:hidden max-md:hidden">
+        <div className="text-left w-[80px] max-sm:hidden max-md:hidden max-lg:hidden">
           <Role label={role} variant={Rolevariant} />
         </div>
 
@@ -46,7 +46,7 @@ export default function Rowdata({
           <Status label={status} variant={statusVariant} />
         </div>
 
-        <div className="w-[90px] max-sm:hidden max-md:hidden">
+        <div className="w-[90px] max-sm:hidden max-md:hidden max-lg:hidden max-xl:hidden">
           <p className="text-sm text-gray-400">2 hours ago</p>
         </div>
 

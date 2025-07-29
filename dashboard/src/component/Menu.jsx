@@ -18,7 +18,7 @@ export default function Menu() {
   const { user } = useUser();
   return (
     <div
-      className={`absolute top-[80px] left-0 w-full z-50 py-3 px-2 ${
+      className={`absolute top-[77px] left-0 w-full z-50 py-3 px-2 ${
         theme === "light" ? " bg-primarycolor-200" : "bg-gray-900"
       }`}
     >
@@ -55,7 +55,7 @@ export default function Menu() {
           </div>
         </div>
 
-        <div className="flex gap-[50px] my-7 cursor-pointer rounded-lg py-2 px-5">
+        <div className="flex gap-[50px] my-7 cursor-pointer rounded-lg py-2 ">
           <div className="flex gap-5">
             <div className=" w-10 h-10 bg-primarycolor-600 rounded-full flex justify-center items-center">
               <LuUser
@@ -65,7 +65,7 @@ export default function Menu() {
               />
             </div>
             <h1
-              className={`text-[19px] font-bold ${
+              className={`max-sm:text-[17px] font-bold ${
                 theme === "light" ? "text-black" : "text-gray-400"
               }`}
             >

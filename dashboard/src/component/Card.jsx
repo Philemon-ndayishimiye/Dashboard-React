@@ -34,7 +34,7 @@ export default function Card({
         {icon}
       </div>
       <div>
-        <h1 className="text-2xl font-bold">{quantity}</h1>
+        <h1 className="text-2xl font-bold max-md:text-xl">{quantity}</h1>
         <p className="text-gray-500 text-xs">{description}</p>
       </div>
     </div>

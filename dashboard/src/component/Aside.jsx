@@ -80,7 +80,7 @@ export default function Aside() {
           category={"Notifications"}
           variant={"primary"}
           className={
-            "max-md:block max-sm:hidden max-lg:hidden max-xl:hidden max-2xl:hidden"
+            "max-md:block max-sm:hidden max-lg:block max-xl:hidden max-2xl:hidden"
           }
         />
 
@@ -89,13 +89,13 @@ export default function Aside() {
           category={"Settings"}
           variant={"primary"}
           className={
-            "max-md:block max-sm:hidden max-lg:hidden max-xl:hidden max-2xl:hidden"
+            "max-md:block max-sm:hidden max-lg:block max-xl:hidden max-2xl:hidden"
           }
         />
 
         <div
           className={
-            "max-md:block max-sm:hidden max-lg:hidden max-xl:hidden max-2xl:hidden"
+            "max-md:block max-sm:hidden max-lg:block max-xl:hidden max-2xl:hidden"
           }
         >
           {theme === "light" ? (
