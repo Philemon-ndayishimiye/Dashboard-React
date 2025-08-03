@@ -40,6 +40,34 @@ export const ProductProvider = ({ children }) => {
       status: "Out of Stock",
       variant: "secondary",
     },
+    {
+      name: "Smart Lights",
+      category: "Smart Home",
+      date: "Dec 6, 2024",
+      status: "In Stock",
+    },
+
+    {
+      name: "Smart Security Cameras",
+      category: "Smart Home",
+      date: "Dec 6, 2024",
+      status: "out of Stock",
+      variant: "secondary",
+    },
+    {
+      name: "Smartwatches",
+      category: "Smart wearable devices",
+      date: "Dec 3, 2024",
+      status: "In Stock",
+    },
+
+    {
+      name: "Fitness Trackers",
+      category: "Smart wearable devices",
+      date: "Dec 2, 2024",
+      status: "low Stock",
+      primary: "primary",
+    },
   ]);
 
   return (

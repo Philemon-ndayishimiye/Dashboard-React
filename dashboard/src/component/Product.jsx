@@ -13,7 +13,14 @@ const darkVariant = {
   secondary: "bg-red-500 text-red-900",
 };
 
-export default function ({ name, category, date, status, variant = "defolt" }) {
+export default function ({
+  name,
+  category,
+  date,
+  status,
+  description,
+  variant = "defolt",
+}) {
   const { theme } = useTheme();
   return (
     <div
@@ -31,6 +38,7 @@ export default function ({ name, category, date, status, variant = "defolt" }) {
         </h1>
         <p className="text-gray-500 text-[13px] font-medium">{category}</p>
         <p className="text-gray-500 text-[13px] ">{date}</p>
+        <p className="text-gray-500 text-[13px] ">{description}</p>
       </div>
 
       <div>

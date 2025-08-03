@@ -80,7 +80,7 @@ export default function Aside() {
           />
         </Link> */}
 
-        <Link to="/product">
+        <Link to="/category">
           <MenuComponent
             icon={<FiLayers />}
             category={"Categories"}
