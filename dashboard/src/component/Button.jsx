@@ -6,9 +6,11 @@ const classVariant = {
   edit: "text-primarycolor-500 font-bold text-sm",
 };
 
-export default function Button({ label, variant = "defolt" }) {
+export default function Button({ label, variant = "defolt", className }) {
   return (
-    <button className={` cursor-pointer  ${classVariant[variant]}`}>
+    <button
+      className={` cursor-pointer  ${classVariant[variant]} ${className}`}
+    >
       {label}
     </button>
   );

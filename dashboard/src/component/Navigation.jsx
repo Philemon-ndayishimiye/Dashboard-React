@@ -9,10 +9,13 @@ import { IoMdMenu } from "react-icons/io";
 import { MdClose } from "react-icons/md";
 import { FiSun } from "react-icons/fi";
 import Menu from "./Menu";
+import { Link } from "react-router-dom";
 
 export default function Navigation() {
   const { theme, HandleTheme } = useTheme();
   const { user, setUser } = useUser();
+
+  console.log(user);
 
   const [open, setIsOpen] = useState(false);
 
@@ -29,19 +32,21 @@ export default function Navigation() {
       } max-sm:px-2 `}
     >
       <div>
-        <h1
-          className={`text-3xl font-bold max-md:text-[18px] ${
-            theme === "light" ? "text-black" : "text-white"
-          } max-sm:text-2xl `}
-        >
-          Dashboard
-        </h1>
+        <Link to="/">
+          <h1
+            className={`text-3xl font-bold max-md:text-[18px] ${
+              theme === "light" ? "text-black" : "text-white"
+            } max-sm:text-2xl `}
+          >
+            Dashboard
+          </h1>
+        </Link>
         <p
           className={`${
             theme === "light" ? "text-black" : "text-gray-400"
           } max-sm:text-[12px]`}
         >
-          Welcome Back, {user.fullname}
+          Welcome Back, {user.username}
         </p>
       </div>
 

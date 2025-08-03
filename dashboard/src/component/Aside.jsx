@@ -12,10 +12,12 @@ import { LuMoon } from "react-icons/lu";
 import useTheme from "../hooks/useTheme";
 import MenuComponent from "./MenuComponent";
 import useUser from "../hooks/useUser";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Aside() {
   const { theme, HandleTheme } = useTheme();
   const { user } = useUser();
+  const navigate = useNavigate();
   return (
     <div
       className={`pl-4 h-full pr-2 pt-5  ${
@@ -58,22 +60,33 @@ export default function Aside() {
       </div>
 
       <div className="">
-        <MenuComponent icon={<LuUser />} category={"Users"} number={"116"} />
-        <MenuComponent
-          icon={<BsBoxSeam />}
-          category={"Products"}
-          number={"100"}
-        />
-        <MenuComponent
-          icon={<RxTextAlignCenter />}
-          category={"Assignments"}
-          number={"10"}
-        />
-        <MenuComponent
-          icon={<FiLayers />}
-          category={"Categories"}
-          variant={"primary"}
-        />
+        <Link to="/user">
+          <MenuComponent icon={<LuUser />} category={"Users"} number={"116"} />
+        </Link>
+
+        <Link to="/product">
+          <MenuComponent
+            icon={<BsBoxSeam />}
+            category={"Products"}
+            number={"100"}
+          />
+        </Link>
+
+        {/* <Link to="/product">
+          <MenuComponent
+            icon={<RxTextAlignCenter />}
+            category={"Assignments"}
+            number={"10"}
+          />
+        </Link> */}
+
+        <Link to="/product">
+          <MenuComponent
+            icon={<FiLayers />}
+            category={"Categories"}
+            variant={"primary"}
+          />
+        </Link>
 
         <MenuComponent
           icon={<IoIosNotificationsOutline />}
@@ -117,7 +130,13 @@ export default function Aside() {
       </div>
 
       <div className="my-7 flex  items-center gap-2 mt-[418px]">
-        <FiLogOut className="text-gray-400" />
+        <FiLogOut
+          onClick={() => {
+            localStorage.removeItem("user");
+            navigate("/login");
+          }}
+          className="text-gray-400 cursor-pointer"
+        />
         <p className="text-[13px] text-gray-600 font-semibold">Logout</p>
       </div>
     </div>
