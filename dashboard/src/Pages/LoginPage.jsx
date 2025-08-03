@@ -5,9 +5,13 @@ import Button from "../component/Button";
 import useUser from "../hooks/useUser";
 import { useNavigate } from "react-router-dom";
 import { MdAdminPanelSettings } from "react-icons/md";
+import { LuMoon } from "react-icons/lu";
+import { FiSun } from "react-icons/fi";
+import useTheme from "../hooks/useTheme";
 
 export default function LoginPage() {
   const navigate = useNavigate();
+  const { theme, HandleTheme } = useTheme();
   const { user, setUser } = useUser();
 
   const [error, setError] = useState({});
@@ -59,7 +63,24 @@ export default function LoginPage() {
   };
 
   return (
-    <div className={`bg-primarycolor-50 pb-[155px] `}>
+    <div
+      className={`${
+        theme === "light" ? "bg-primarycolor-50" : "bg-gray-800"
+      } pb-[155px] `}
+    >
+      <div className={`text-gray-400`}>
+        {theme === "light" ? (
+          <LuMoon
+            className="text-3xl cursor-pointer absolute top-1 right-1"
+            onClick={HandleTheme}
+          />
+        ) : (
+          <FiSun
+            className="text-3xl cursor-pointer absolute top-1 right-1"
+            onClick={HandleTheme}
+          />
+        )}
+      </div>
       <div className="px-[33%] py-[3%] ">
         <div className="flex px-4 py-4">
           <div className=" w-[130px]  h-[130px] bg-primarycolor-500 rounded-full flex items-center justify-center text-white ">
@@ -67,7 +88,13 @@ export default function LoginPage() {
           </div>
 
           <div>
-            <h1 className=" pt-[50px] pl-4 text-4xl font-bold">Admin Panel</h1>
+            <h1
+              className={`pt-[50px] pl-4 text-4xl font-bold ${
+                theme === "light" ? "text-black" : "text-white"
+              }`}
+            >
+              Admin Panel
+            </h1>
           </div>
         </div>
 
@@ -90,7 +117,11 @@ export default function LoginPage() {
             variant={error.email ? "danger" : "defolt"}
           />
           {error.email && <span className="text-red-500">{error.email}</span>}
-          <span className="cursor-pointer float-right pr-[90px] pb-4 text-[13px]">
+          <span
+            className={`cursor-pointer float-right pr-[90px] pb-4 text-[13px] ${
+              theme === "light" ? "text-black" : "text-white"
+            }`}
+          >
             Forgot password
           </span>
 
