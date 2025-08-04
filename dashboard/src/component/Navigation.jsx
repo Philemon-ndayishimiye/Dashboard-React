@@ -46,7 +46,7 @@ export default function Navigation() {
             theme === "light" ? "text-black" : "text-gray-400"
           } max-sm:text-[12px]`}
         >
-          Welcome Back, {user.username}
+          Welcome Back, Admin
         </p>
       </div>
 

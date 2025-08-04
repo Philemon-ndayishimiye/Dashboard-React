@@ -1,4 +1,5 @@
 import React from "react";
+import useTheme from "../hooks/useTheme";
 
 const classVariant = {
   defolt: "border-gray-600 ",
@@ -13,9 +14,10 @@ export default function Input({
   variant = "defolt",
   name,
 }) {
+  const { theme } = useTheme();
   return (
     <input
-      className={`border rounded-lg py-2 pl-[40px] pr-[120px] focus:outline-none flex mb-5 ${classVariant[variant]}`}
+      className={` bg-primarycolor-50 border rounded-lg py-2 pl-[40px] pr-[120px] focus:outline-none flex mb-5 ${classVariant[variant]}`}
       type={type}
       placeholder={placeholder}
       value={value}

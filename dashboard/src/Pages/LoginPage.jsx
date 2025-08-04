@@ -8,17 +8,21 @@ import { MdAdminPanelSettings } from "react-icons/md";
 import { LuMoon } from "react-icons/lu";
 import { FiSun } from "react-icons/fi";
 import useTheme from "../hooks/useTheme";
+import useLogin from "../hooks/useLogin";
 
 export default function LoginPage() {
   const navigate = useNavigate();
+
+  const [loginError, setLoginError] = useState("");
+  const { loginUser, setLoginUser } = useLogin();
   const { theme, HandleTheme } = useTheme();
   const { user, setUser } = useUser();
 
   const [error, setError] = useState({});
 
   const [formData, setFormData] = useState({
-    username: "",
     email: "",
+    password: "",
   });
 
   const handleSubmit = (e) => {
@@ -29,8 +33,8 @@ export default function LoginPage() {
     localStorage.setItem("user", JSON.stringify(formData));
 
     setFormData({
-      username: "",
       email: "",
+      password: "",
     });
 
     const formError = {};
@@ -39,19 +43,25 @@ export default function LoginPage() {
       formError.email = "please enter correct email";
     }
 
-    if (!formData.username) {
-      formError.username = "please enter your username";
+    if (!formData.password) {
+      formError.password = "please enter correct password";
     }
 
     if (Object.keys(formError).length > 1) {
       setError(formError);
     }
 
-    if (Object.keys(formError).length === 0) {
+    const savedLogin = JSON.parse(localStorage.getItem("user"));
+
+    if (
+      savedLogin.email === loginUser.email &&
+      savedLogin.password === loginUser.password
+    ) {
+      console.log("you are allowed to continue");
       navigate("/");
-      console.log("hello world");
     } else {
-      navigate("/login");
+      // formError.login = "incorrect email or password";
+      setLoginError("incorrect email or password");
     }
   };
 
@@ -66,7 +76,7 @@ export default function LoginPage() {
     <div
       className={`${
         theme === "light" ? "bg-primarycolor-50" : "bg-gray-800"
-      } pb-[155px] `}
+      } pb-[160px] `}
     >
       <div className={`text-gray-400`}>
         {theme === "light" ? (
@@ -89,26 +99,16 @@ export default function LoginPage() {
 
           <div>
             <h1
-              className={`pt-[50px] pl-4 text-4xl font-bold ${
+              className={`pt-[50px] pl-4 text-2xl font-bold ${
                 theme === "light" ? "text-black" : "text-white"
               }`}
             >
-              Admin Panel
+              IHUZA INVENTORY
             </h1>
           </div>
         </div>
 
         <form action="" onSubmit={handleSubmit}>
-          <Input
-            placeholder={"Username"}
-            value={formData.username}
-            onChange={handleChange}
-            name={"username"}
-            variant={error.username ? "danger" : "defolt"}
-          />
-          {error.username && (
-            <span className="text-red-500">{error.username}</span>
-          )}
           <Input
             placeholder={"Email"}
             value={formData.email}
@@ -116,7 +116,19 @@ export default function LoginPage() {
             name={"email"}
             variant={error.email ? "danger" : "defolt"}
           />
-          {error.email && <span className="text-red-500">{error.email}</span>}
+          {error.username && (
+            <span className="text-red-500">{error.email}</span>
+          )}
+          <Input
+            placeholder={"password"}
+            value={formData.password}
+            onChange={handleChange}
+            name={"password"}
+            variant={error.password ? "danger" : "defolt"}
+          />
+          {error.email && (
+            <span className="text-red-500">{error.password}</span>
+          )}
           <span
             className={`cursor-pointer float-right pr-[90px] pb-4 text-[13px] ${
               theme === "light" ? "text-black" : "text-white"
@@ -126,6 +138,10 @@ export default function LoginPage() {
           </span>
 
           <Button label={"Sign in"} className={" w-[350px] "} />
+
+          <span className="text-red-500 block py-4 pl-[70px]">
+            {loginError}
+          </span>
         </form>
       </div>
     </div>
